@@ -6,7 +6,7 @@ pipeline {
   }
   
   stages {
-    stage('Pull Image 23') {
+    stage('Pull Image 23456') {
       steps {
         script {
           def dockerImage = docker.image('chrizzto/petshop:latest')
