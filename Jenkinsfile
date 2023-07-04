@@ -1,13 +1,9 @@
 pipeline {
-  agent none
+  agent {
+    docker { image 'node:16-alpine' }
+  }
   stages {
-    stage('Pull Image') {
-      steps {
-        script {
-          def dockerImage = docker.image('docker pull chrizzto/proapp:latest')
-          dockerImage.pull()
-        }
-      }
-    }
+    // Add your stages here
   }
 }
+
