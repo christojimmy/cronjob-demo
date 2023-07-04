@@ -1,9 +1,14 @@
 pipeline {
-  agent {
-    docker { image 'node:16-alpine' }
-  }
+  agent none
+  
   stages {
-    // Add your stages here
+    stage('Pull Image') {
+      steps {
+        script {
+          def dockerImage = docker.image('node:16-alpine')
+          dockerImage.pull()
+        }
+      }
+    }
   }
 }
-
